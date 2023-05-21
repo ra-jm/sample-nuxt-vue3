@@ -4,21 +4,21 @@
             <v-card>
                 <v-card-text>
                     <v-row>
-                        <v-col>
+                        <v-col cols="12" md="4" lg="2">
                             <v-select prepend-icon="$marker" label="Location" hide-details
                                 :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']" variant="solo"
                                 flat></v-select>
                         </v-col>
-                        <v-col>
+                        <v-col cols="12" md="4" lg="2">
                             <v-select prepend-icon="$tour" label="Type" hide-details
                                 :items="['Adventure', 'Biking', 'Discovery', 'Trekking']" variant="solo" flat></v-select>
                         </v-col>
-                        <v-col>
+                        <v-col cols="12" md="4" lg="3">
                             <v-text-field prepend-icon="$date" hide-details type="date" v-model="date" label="Date from"
                                 variant="solo" flat></v-text-field>
                         </v-col>
-                        <v-col>
-                            <v-text-field hide-details type="number" label="Guests" :value="totalGuests" variant="solo"
+                        <v-col cols="12" md="6" lg="3">
+                            <v-text-field hide-details type="number" label="Guests" v-model="totalGuests" variant="solo"
                                 flat>
                                 <template v-slot:append>
                                     <v-menu :close-on-content-click="false">
@@ -78,7 +78,7 @@
                                 </template>
                             </v-text-field>
                         </v-col>
-                        <v-col class="text-right">
+                        <v-col cols="12" md="6" lg="2" class="text-right">
                             <v-btn size="x-large" color="primary">Search</v-btn>
                         </v-col>
                     </v-row>
@@ -91,12 +91,16 @@
             </v-chip>
         </div>
         <div class="text-center">
-            <h3 class="text-h3 font-weight-bold">Explore real adventure</h3>
+            <h3 class="text-h2 font-weight-bold">Explore real adventure</h3>
         </div>
         <v-container>
-            <Carousel :items-to-show="3" :breakpoints="{
+            <Carousel :items-to-show="0.9" :breakpoints="{
+                600: {
+                    itemsToShow: 0.5,
+                    snapAlign: 'center',
+                },
                 700: {
-                    itemsToShow: 2.5,
+                    itemsToShow: 1.5,
                     snapAlign: 'center',
                 },
                 1024: {

@@ -49,3 +49,7 @@ p {
 .v-chip {
   padding: 1.5rem !important;
 }
+.v-toolbar {
+  backdrop-filter: blur(0.7rem) !important;
+  background: transparent !important;
+}
