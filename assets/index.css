@@ -1,3 +1,10 @@
+/* Overriding vuetify defaults */
+[class*="text-"],
+button,
+p {
+  font-family: "Kumbh Sans", sans-serif !important;
+}
+
 .v-container {
   padding: 1rem 20% !important;
 }
@@ -19,7 +26,14 @@
 }
 @media only screen and (min-width: 1280px) {
   .v-container {
-    padding: 1rem 21% !important;
+    max-width: calc(100% - 25%) !important;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .v-container {
+    max-width: calc(100% - 35%) !important;
+    /* background: rebeccapurple; */
   }
 }
 
@@ -30,4 +44,8 @@
 
 .d-flex {
   display: flex;
+}
+
+.v-chip {
+  padding: 1.5rem !important;
 }

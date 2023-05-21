@@ -1,7 +1,19 @@
 import { createVuetify, ThemeDefinition } from "vuetify";
 import { md3 } from "vuetify/blueprints";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
-import { mdiAccount, mdiHome, mdiMapMarker, mdiEmail, mdiCart } from "@mdi/js";
+import {
+  mdiAccount,
+  mdiHome,
+  mdiMapMarker,
+  mdiEmail,
+  mdiCart,
+  mdiTransitDetour,
+  mdiCalendar,
+  mdiPencil,
+  mdiPlus,
+  mdiMinus,
+  mdiFilter,
+} from "@mdi/js";
 
 const defaultTheme: ThemeDefinition = {
   dark: false,
@@ -39,6 +51,12 @@ export default defineNuxtPlugin((app) => {
           marker: mdiMapMarker,
           email: mdiEmail,
           cart: mdiCart,
+          tour: mdiTransitDetour,
+          date: mdiCalendar,
+          pencil: mdiPencil,
+          plus: mdiPlus,
+          minus: mdiMinus,
+          filter: mdiFilter,
         },
         sets: {
           mdi,

@@ -37,36 +37,40 @@
             </v-app-bar-title>
         </v-container>
     </v-app-bar>
-    <v-sheet height="55vh" width="100%" style="background: aliceblue;">
-
-        <v-carousel cycle height="100%" hide-delimiter-background show-arrows="hover">
-            <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                <v-sheet :color="colors[i]" height="100%">
-                    <div class="d-flex fill-height justify-center align-center">
-                        <div class="text-h2">
-                            {{ slide }} Slide
+    <v-sheet height="65vh" width="100%" style="background: aliceblue;">
+        <v-carousel cycle height="100%" hide-delimiter-background hide-delimiters show-arrows="hover">
+            <v-carousel-item>
+                <div class="fill-height slide-1">
+                    <v-container class="fill-height">
+                        <div class="d-flex fill-height justify-start align-center">
+                            <div>
+                                <h2 class="text-h2 text-white font-weight-bold">Your journey begins here</h2>
+                                <h6 class="text-h6 text-white mt-7">8000 tours available. Book now.</h6>
+                                <v-btn class="mt-7" color="primary" size="x-large" variant="flat">Let's Get Started</v-btn>
+                            </div>
                         </div>
-                    </div>
-                </v-sheet>
+                    </v-container>
+                </div>
+            </v-carousel-item>
+            <v-carousel-item>
+                <div class="fill-height slide-2">
+                    <v-container class="fill-height">
+                        <div class="d-flex fill-height justify-start align-center">
+                            <div>
+                                <h2 class="text-h2 text-white font-weight-bold">Tour Travel & Adventure camping</h2>
+                                <h6 class="text-h6 text-white mt-7">8000 tours available. Book now.</h6>
+                                <v-btn class="mt-7" color="primary" size="x-large" variant="flat">Let's Get Started</v-btn>
+                            </div>
+                        </div>
+                    </v-container>
+                </div>
             </v-carousel-item>
         </v-carousel>
     </v-sheet>
+    <section-2></section-2>
+    <section-3></section-3>
 </template>
 <script setup lang="ts">
-const colors = ref([
-    'indigo',
-    'warning',
-    'pink darken-2',
-    'red lighten-1',
-    'deep-purple accent-4',
-])
-const slides = ref([
-    'First',
-    'Second',
-    'Third',
-    'Fourth',
-    'Fifth',
-])
 
 </script>
 <style>
@@ -97,5 +101,49 @@ const slides = ref([
 
 .v-badge__badge {
     height: 1rem;
+}
+
+.slide-1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('/bg-home-slide-01.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background;
+    animation: breath 30s infinite;
+}
+
+.slide-2::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('/bg-home-slide-02.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background;
+    animation: breath 30s infinite;
+}
+
+
+
+@keyframes breath {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 </style>
